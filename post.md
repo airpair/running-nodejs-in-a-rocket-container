@@ -1,4 +1,4 @@
-# Introduction 
+## Introduction 
 
 The internet is abuzz with docker this, container that.  Rocket is another entry into the field of contanerizing your applications. It's very new and the spec is still under heavy development. It's already showing it can be a viable container runtime.
 
@@ -8,7 +8,7 @@ While there has been lots published on running statically compiled golang applic
 
 There are several ways to determine what libs are required to run an application. You can use ldd and strace to hunt them all down manually.  Since this was supposed to be a quick exploration I reached for Jailkit. While its original intent is to help setup chroot jails it also happens to work perfectly for our current situation.
 
-# Dependencies
+## Dependencies
 
 I’ll wait here while you install the following tools needed for our journey:
 
@@ -22,7 +22,7 @@ Jailkit requires root so we’ll switch into root for the rest of the build proc
 sudo su -
 ````
 
-# Building your first image
+## Building your first image
 
 Then we’ll create the folder structure that we will build our image / container into:
 
@@ -70,7 +70,7 @@ At this point we’re ready to compile the image using actool:
 actool --debug build node-layout/ example-node.aci
 ````
 
-# Image validation
+## Image validation
 
 The image we just generated can be validated using the actool again with the command:
 
@@ -79,7 +79,7 @@ actool --debug validate example-node.aci
 example-node.aci: valid app container image
 ````
 
-# Blast off!
+## Blast off!
 
 As long as everything above was successful we are ready to launch our first rocket container!
 
